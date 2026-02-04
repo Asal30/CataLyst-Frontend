@@ -12,7 +12,7 @@ function App() {
   const [view, setView] = useState("landing"); // 'landing' | 'app'
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
-  const [source, setSource] = useState("upload");
+  const [source, setSource] = useState("mobile");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
   const { showMessage } = useMessage();
