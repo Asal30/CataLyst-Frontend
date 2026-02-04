@@ -1,30 +1,3 @@
-// const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
-
-// /**
-//  * Uploads an image to the backend for cataract analysis
-//  * @param {File} imageFile The image file to analyze
-//  * @returns {Promise<Object>} The analysis result including prediction and heatmap
-//  */
-// export async function analyzeImage(imageFile) {
-//     const formData = new FormData();
-//     formData.append('file', imageFile);
-
-//     try {
-//         const response = await fetch(`${API_URL}/predict`, {
-//             method: 'POST',
-//             body: formData,
-//         });
-
-//         if (!response.ok) {
-//             throw new Error(`Analysis failed: ${response.statusText}`);
-//         }
-
-//         return await response.json();
-//     } catch (error) {
-//         console.error('API Error:', error);
-//         throw error;
-//     }
-// }
 
 import axios from "axios";
 

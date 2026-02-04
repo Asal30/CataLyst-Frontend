@@ -6,7 +6,7 @@ import AnalyzeButton from "./components/AnalyzeButton";
 import ResultCard from "./components/ResultCard";
 import Disclaimer from "./components/Disclaimer";
 import { analyzeImage } from "./services/api";
-import clsx from "clsx";
+import { useMessage } from "./components/MessageContext";
 
 function App() {
   const [view, setView] = useState("landing"); // 'landing' | 'app'
@@ -15,6 +15,7 @@ function App() {
   const [source, setSource] = useState("mobile");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
+  const { showMessage } = useMessage();
 
   const handleStart = () => {
     setView("app");
@@ -31,17 +32,24 @@ function App() {
   };
 
   const handleAnalyze = async () => {
-    if (!image) return;
+    if (!image) {
+      showMessage("Please select an image first.", "warning");
+      return;
+    }
 
     setLoading(true);
     try {
       const data = await analyzeImage(image, source);
       setResult(data);
+      showMessage("Image analyzed successfully.", "success");
     } catch (err) {
-      console.error(err);
-      alert("Error analyzing image");
+      showMessage(
+        err?.message || "Unable to analyze image. Please try a clearer eye image.",
+        "error"
+      );
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
@@ -82,7 +90,7 @@ function App() {
                 <AnalyzeButton 
                   onClick={handleAnalyze} 
                   loading={loading} 
-                  disabled={!image}
+                  disabled={!image || loading}
                 />
               </div>
 

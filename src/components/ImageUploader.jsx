@@ -92,7 +92,7 @@ export default function ImageUploader({ onImageSelect, preview }) {
             <input 
               type="file" 
               className="hidden" 
-              accept="image/*" 
+              accept="image/*"
               onChange={handleChange} 
             />
           </label>
