@@ -18,8 +18,8 @@ export default function LandingPage({ onStart }) {
         
         {/* Logo/Icon */}
         <div className="mb-6 md:mb-8 relative inline-block">
-          <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-          <div className="relative p-3 md:p-4 bg-black rounded-full border border-slate-800 shadow-2xl">
+           <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+           <div className="relative p-3 md:p-4 bg-black rounded-full border border-slate-800 shadow-2xl">
              <svg className="w-10 h-10 md:w-12 md:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -28,7 +28,7 @@ export default function LandingPage({ onStart }) {
         </div>
         
         {/* Main Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-4 md:mb-6 leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-4 md:mb-6 leading-tight">
           <span className="block text-white">Cataract Screening</span>
           <span className="block text-gradient mt-1 md:mt-2 pb-2">Reimagined.</span>
         </h1>
@@ -55,7 +55,7 @@ export default function LandingPage({ onStart }) {
         </div>
 
         {/* Features Grid */}
-        <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto px-4">
+          <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto px-4">
           {[
             { title: 'AI Analysis', desc: 'Deep learning powered detection', icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z' },
             { title: 'Instant Results', desc: 'Get feedback in seconds', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },

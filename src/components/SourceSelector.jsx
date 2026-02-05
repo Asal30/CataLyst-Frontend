@@ -2,8 +2,8 @@ import clsx from 'clsx';
 
 export default function SourceSelector({ source, setSource }) {
   const options = [
-    { id: 'upload', label: 'Upload Image', icon: 'M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12' },
-    { id: 'capture', label: 'Capture Image', icon: 'M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z' }
+    { id: 'mobile', label: 'Mobile Image', icon: 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z' },
+    { id: 'slitlamp', label: 'Slit Lamp Image', icon: 'M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3m4 8h-6a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2zm2 4h1a7 7 0 1 0 0-14h-1m-7 14h8m-11 4h18' }
   ];
 
   return (
