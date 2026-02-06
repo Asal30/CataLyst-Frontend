@@ -35,7 +35,7 @@ export default function ResultCard({ result }) {
           <div className="w-full md:w-64 bg-slate-800/80 rounded-2xl p-4 border border-slate-700">
             <div className="flex justify-between items-end mb-2">
               <span className="text-xs text-slate-400 font-medium uppercase tracking-wide">Confidence</span>
-              <span className="text-2xl font-bold text-white">{result.confidence}%</span>
+              <span className="text-2xl font-bold text-white">{result.confidence.toFixed(2)}%</span>
             </div>
 
             <div className="h-3 w-full bg-slate-700 rounded-full overflow-hidden relative">
@@ -45,7 +45,7 @@ export default function ResultCard({ result }) {
                     ? "bg-gradient-to-r from-red-600 to-red-400"
                     : "bg-gradient-to-r from-emerald-600 to-emerald-400"
                 }`}
-                style={{ width: `${result.confidence}%` }}
+                style={{ width: `${result.confidence.toFixed(2)}%` }}
               />
             </div>
 
