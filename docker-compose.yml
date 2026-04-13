@@ -1,0 +1,40 @@
+services:
+  catalyst-api:
+    # Backend is in sibling repository next to frontend repo
+    build:
+      context: ../CataLyst-Backend
+      dockerfile: Dockerfile
+    container_name: catalyst-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../CataLyst-Backend/uploads:/app/uploads
+      - ../CataLyst-Backend/outputs:/app/outputs
+      - ../CataLyst-Backend/logs:/app/logs
+    environment:
+      - DEBUG=false
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+      
+
+  catalyst-frontend:
+    # Frontend repo is current folder, not ./frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: catalyst-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - catalyst-api
+    restart: unless-stopped
+
+networks:
+  default:
+    driver: bridge

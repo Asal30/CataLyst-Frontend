@@ -1,30 +1,13 @@
-import clsx from 'clsx';
-
-export default function SourceSelector({ source, setSource }) {
-  const options = [
-    { id: 'mobile', label: 'Mobile Image', icon: 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z' },
-    { id: 'slitlamp', label: 'Slit Lamp Image', icon: 'M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3m4 8h-6a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2zm2 4h1a7 7 0 1 0 0-14h-1m-7 14h8m-11 4h18' }
-  ];
-
+export default function SourceSelector() {
   return (
-    <div className="grid grid-cols-2 gap-3 p-1 bg-slate-900/50 rounded-2xl border border-slate-800">
-      {options.map((opt) => (
-        <button
-          key={opt.id}
-          onClick={() => setSource(opt.id)}
-          className={clsx(
-            "relative flex items-center justify-center gap-2 py-3 text-sm font-semibold rounded-xl transition-all duration-300",
-            source === opt.id 
-              ? "bg-slate-700 text-white shadow-lg shadow-black/20" 
-              : "text-slate-500 hover:text-slate-300 hover:bg-slate-800/50"
-          )}
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={opt.icon} />
-          </svg>
-          {opt.label}
-        </button>
-      ))}
+    <div className="grid grid-cols-1 gap-3 p-1 bg-slate-900/50 rounded-2xl border border-slate-800">
+      <div className="flex items-center justify-center gap-2 py-3 text-sm font-semibold rounded-xl bg-slate-700 text-white shadow-lg shadow-black/20">
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+        </svg>
+        CBM Analysis
+      </div>
     </div>
   );
 }
