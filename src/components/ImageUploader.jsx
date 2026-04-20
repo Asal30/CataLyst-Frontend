@@ -5,7 +5,7 @@ export default function ImageUploader({ onImageSelect, preview }) {
   const [dragActive, setDragActive] = useState(false);
 
   const mobileTip =
-    "***For mobile photos: use rear camera, bright light, clean lens, keep 7–10 cm away, focus on eye, take multiple shots.***";
+    "For mobile photos:- Use rear camera, clean lens, keep 7–10 cm away, focus on eye, take multiple shots.";
 
   const handleDrag = useCallback((e) => {
     e.preventDefault();
@@ -109,8 +109,11 @@ export default function ImageUploader({ onImageSelect, preview }) {
               Upload mobile phone or slit lamp eye images
             </p>
 
-            <p className="text-xs text-slate-500 mt-3 max-w-md leading-relaxed px-4">
+            <p className="text-xs text-slate-100 mt-3 max-w-md leading-relaxed px-4">
               {mobileTip}
+            </p>
+            <p className="text-xs text-slate-500 mt-3 max-w-md leading-relaxed px-4">
+              --- Rest in dark 1–2 min, then capture eye for better detail ---
             </p>
 
             <input
